@@ -18,12 +18,6 @@ jobs:
     resource_class: medium+
     steps:
       - checkout
-      #- run:
-      #    name: Add environment vars
-      #    command: |
-      #      echo "export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}" >> $BASH_ENV
-      #      echo "export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}" >> $BASH_ENV
-      #      echo "export AWS_REGION=${AWS_REGION}" >> $BASH_ENV
       - run:
           name: Install project dependencies
           command: yarn install
@@ -44,6 +38,7 @@ workflows:
   build:
     jobs:
       - build-master:
+          context: PRODUCTION
           filters:
             branches:
               only: master
