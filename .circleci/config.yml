@@ -31,7 +31,7 @@ jobs:
           name: Build
           command: yarn build
       - aws-s3/sync:
-          arguments: --cache-control "max-age=0"
+          # arguments: --cache-control "max-age=0"
           aws-access-key-id: ACCESS_KEY_ID
           aws-secret-access-key: SECRET_ACCESS_KEY
           aws-region: AWS_REGION
