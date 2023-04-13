@@ -38,7 +38,7 @@ workflows:
   build:
     jobs:
       - build-master:
-          context: PRODUCTION
+          context: STAGING
           filters:
             branches:
               only: master
