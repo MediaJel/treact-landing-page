@@ -8,7 +8,7 @@ executors:
   the-executor:
     docker:
       - image: cimg/node:16.20.0
-    working_directory: ~/command
+    working_directory: ~/treact-landing-page
 
 orbs:
   aws-s3: circleci/aws-s3@2.0.0
