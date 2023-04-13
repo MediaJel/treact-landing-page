@@ -11,7 +11,7 @@ executors:
     working_directory: ~/command
 
 orbs:
-  aws-s3: circleci/aws-s3@3.1.1
+  aws-s3: circleci/aws-s3@2.0.0
 jobs:
   build-master:
     executor: the-executor
@@ -32,18 +32,18 @@ jobs:
           command: yarn build
       - aws-s3/sync:
           # arguments: --cache-control "max-age=0"
-          aws-access-key-id: ACCESS_KEY_ID
-          aws-secret-access-key: SECRET_ACCESS_KEY
-          aws-region: AWS_REGION
+          # aws-access-key-id: ACCESS_KEY_ID
+          # aws-secret-access-key: SECRET_ACCESS_KEY
+          # aws-region: AWS_REGION
           from: build/
           to: "s3://treact-landing-page-paid-search"
+          arguments: --cache-control "max-age=0,no-cache,no-store,must-revalidate"
 
 workflows:
   version: 2
   build:
     jobs:
       - build-master:
-          context: PRODUCTION
           filters:
             branches:
               only: master
