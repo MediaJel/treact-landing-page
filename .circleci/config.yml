@@ -11,7 +11,7 @@ executors:
     working_directory: ~/command
 
 orbs:
-  aws-s3: circleci/aws-s3@3.1
+  aws-s3: circleci/aws-s3@3.1.1
 jobs:
   build-master:
     executor: the-executor
