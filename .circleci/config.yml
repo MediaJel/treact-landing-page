@@ -7,7 +7,7 @@ version: 2.1
 executors:
   the-executor:
     docker:
-      - image: cimg/node:18.15.0
+      - image: cimg/node:16.20.0
     working_directory: ~/command
 
 orbs:
